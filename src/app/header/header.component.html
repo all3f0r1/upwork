@@ -14,7 +14,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav ms-auto">
-        <li class="nav-item dropdown" (click)="onToggle()">
+        <li *ngIf="isLogged" class="nav-item dropdown" (click)="onToggle()">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             My account
           </a>
@@ -23,6 +23,9 @@
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
+        </li>
+        <li *ngIf="!isLogged" class="nav-item">
+          <a href="auth" class="nav-link">Login</a>
         </li>
       </ul>
     </div>

@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   dropdownToggle = false;
+  isLogged = false;
 
   constructor(public translate: TranslateService) {}
 
