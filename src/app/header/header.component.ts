@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +9,14 @@ export class HeaderComponent implements OnInit {
   dropdownToggle = false;
   isLogged = false;
 
-  constructor(public translate: TranslateService) {}
+  constructor() // public translate: TranslateService
+  {}
 
   ngOnInit(): void {}
 
-  switchLang(lang: string) {
-    this.translate.use(lang);
-  }
+  // switchLang(lang: string) {
+  //   this.translate.use(lang);
+  // }
 
   // This should be a directive, I know, but it came up
   // as a more concise solution, since the click has to
