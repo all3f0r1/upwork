@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { StartPageModule } from './start-page/start-page.module';
+import { HomePageModule } from './home-page/home-page.module';
 
 // This allows AoT compilation of the translation module
 // export function createTranslateLoader(http: HttpClient) {
@@ -18,7 +18,7 @@ import { StartPageModule } from './start-page/start-page.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StartPageModule,
+    HomePageModule,
     // TranslateModule.forRoot({
     //   defaultLanguage: 'en',
     //   loader: {
