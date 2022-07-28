@@ -98,11 +98,6 @@ export class AuthService {
     this.expirationTimer = null;
   }
 
-  isLoggedIn(): boolean {
-    const item = localStorage.getItem('userData');
-    return item !== null;
-  }
-
   autoLogout(expirationDuration: number) {
     this.expirationTimer = setTimeout(() => {
       this.logout();
