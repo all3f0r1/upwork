@@ -15,7 +15,7 @@ export class JobDetailComponent implements OnInit, OnDestroy {
   id!: number;
   job!: Job;
   authSub = new Subscription();
-  isLogged = false;
+  isLogged = true;
 
   constructor(
     private jobsService: JobsService,
