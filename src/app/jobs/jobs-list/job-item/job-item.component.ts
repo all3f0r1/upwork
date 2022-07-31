@@ -11,9 +11,9 @@ import { Job } from '../../job.model';
 export class JobItemComponent implements OnInit, OnDestroy {
   @Input()
   id?: number;
-  isLogged = false;
   @Input()
   job!: Job;
+  isLogged = false;
   authSub!: Subscription;
 
   constructor(private authService: AuthService) {}
