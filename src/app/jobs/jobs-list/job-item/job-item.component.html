@@ -1,7 +1,9 @@
-<div class="card d-inline-flex">
-  <div class="card-body">
-    <h5 class="card-title">{{ job.title }}</h5>
-    <p class="card-text">{{ job.location }}</p>
-    <a *ngIf="isLogged" class="btn btn-primary">Apply</a>
+<a routerLink="{{ id }}">
+  <div class="card d-inline-flex">
+    <div class="card-body">
+      <h5 class="card-title">{{ job.title }}</h5>
+      <p class="card-text">{{ job.location }}</p>
+      <a *ngIf="isLogged" class="btn btn-primary">Apply</a>
+    </div>
   </div>
-</div>
+</a>
