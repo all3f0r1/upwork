@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Job } from '../../job.model';
-import { JobsService } from '../../jobs.service';
 
 @Component({
   selector: 'app-job-item',
@@ -12,18 +11,15 @@ import { JobsService } from '../../jobs.service';
 export class JobItemComponent implements OnInit {
   id!: number;
   isLogged = false;
+  @Input()
   job!: Job;
   authSub!: Subscription;
 
-  constructor(
-    private authService: AuthService,
-    private jobService: JobsService
-  ) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.authSub = this.authService.user.subscribe((user) => {
       this.isLogged = !!user;
     });
-    this.job = this.jobService.getJob(this.id);
   }
 }

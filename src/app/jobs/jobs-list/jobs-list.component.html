@@ -1,9 +1,5 @@
 <div class="row">
   <div class="col-xs-12">
-    <div *ngFor="let job of jobs" class="card d-inline-flex">
-
-    </div>
-
-    <app-job-item *ngFor="let recipe of recipes; let index = index" [recipe]="recipe" [id]="index"></app-job-item>
+    <app-job-item *ngFor="let job of jobs; let index = index" [job]="job" [id]="index"></app-job-item>
   </div>
 </div>
