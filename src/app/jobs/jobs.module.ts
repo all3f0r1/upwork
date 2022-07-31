@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobEditComponent } from './job-edit/job-edit.component';
+import { JobStartComponent } from './job-start/job-start.component';
 import { JobItemComponent } from './jobs-list/job-item/job-item.component';
 import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { JobsComponent } from './jobs.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: JobsListComponent,
+        component: JobStartComponent,
       },
       {
         path: ':id',
@@ -34,6 +35,7 @@ const routes: Routes = [
     JobDetailComponent,
     JobsListComponent,
     JobItemComponent,
+    JobStartComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [JobsComponent],
