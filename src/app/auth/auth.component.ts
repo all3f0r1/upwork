@@ -16,7 +16,7 @@ import { AuthResponseData, AuthService } from './auth.service';
 export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
-  error: string | undefined;
+  error!: string;
   form: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -50,19 +50,18 @@ export class AuthComponent implements OnInit {
       : (obs = this.authService.signUp(email, password));
 
     obs.subscribe({
-      //   next: (resp) => {
-      //     // console.log(resp);
-      //     this.isLoading = false;
-      //     this.router.navigate(['/recipes']);
-      //   },
-      //   error: (error) => {
-      //     // console.log(error);
-      //     this.isLoading = false;
-      //     this.error = error;
-      //   },
-      // });
-      // this.form.reset();
+      next: (resp) => {
+        // console.log(resp);
+        this.isLoading = false;
+        this.router.navigate(['/jobs']);
+      },
+      error: (error) => {
+        // console.log(error);
+        this.isLoading = false;
+        this.error = error;
+      },
     });
+    this.form.reset();
   }
 
   onHandleError() {

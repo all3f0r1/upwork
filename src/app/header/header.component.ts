@@ -10,7 +10,7 @@ import { AuthService } from '../auth/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   userSub: Subscription = new Subscription();
   dropdownToggle = false;
-  isLogged = false;
+  isLogged!: boolean;
 
   constructor(
     private authService: AuthService // public translate: TranslateService
@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe((user) => {
       this.isLogged = !!user;
+      // console.log(this.isLogged);
     });
   }
 
